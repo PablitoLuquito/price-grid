@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  weights: 400, 700;
+  font-size: 16px;
+}
+
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cont {
+  display: grid;
+  grid-template:
+    "topo topo"
+    "esquerda direita";
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px gray;
+}
+
+.topo,
+.esquerda,
+.direita {
+  padding: 30px;
+  min-height: 225px;
+  color: white;
+  overflow: clip;
+}
+
+.esquerda,
+.direita {
+  width: 300px;
+}
+
+.topo {
+  color: black;
+  grid-area: topo;
+}
+
+.topo h1 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  color: #2bb3b1;
+}
+
+.topo h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #bfdf32;
+}
+
+.topo p {
+  font-size: 16px;
+  color: #c5cacd;
+}
+
+.esquerda {
+  background-color: hsl(179, 62%, 43%);
+  grid-area: esquerda;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.preco {
+  font-size: 15px;
+  color: hsl(179, 62%, 70%);
+}
+
+.preco span {
+  font-size: 25px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.direita {
+  background-color: hsl(179, 62%, 50%);
+  grid-area: direita;
+  border-radius: 0px 0px 5px 0px;
+}
+
+.direita p {
+  font-size: 14px;
+}
+
+.esquerda h2,
+.direita h2 {
+  font-size: 18px;
+}
+
+.botao {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: hsl(71, 73%, 54%);
+  width: 240px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow: 2px 2px 10px hsl(204, 43%, 43%);
+}
+
+.botao:hover {
+  background-color: hsl(71, 73%, 48%);
+}
+
+.botao:active {
+  background-color: hsl(71, 73%, 54%);
+}
+
+@media screen and (max-width: 610px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .grid-cont {
+    grid-template:
+      "topo"
+      "esquerda"
+      "direita";
+  }
+
+  .topo {
+    max-width: 300px;
+  }
+
+  .topo h1 {
+    margin-top: 0;
+  }
+
+  .esquerda,
+  .direita {
+    border-radius: 0px;
+  }
+
+  .direita {
+    border-radius: 0px 0px 5px 5px;
+  }
+}
